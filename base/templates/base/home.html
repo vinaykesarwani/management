@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <h1 style="display: flex; justify-content: center; margin-top: 10px;">Employee Management System</h1>
+    <hr>
+    <div class="container" style="margin-top: 100px;">
+      <div class="row" style="justify-content: space-evenly;">
+        <a class="btn btn-primary col-2" href="{% url 'view' %}" role="button">View Employees</a>
+        <a class="btn btn-primary col-2" href="{% url 'add' %}" role="button">Add Employee</a>
+        <a class="btn btn-primary col-2" href="{% url 'delete' %}" role="button">Delete Employee</a>
+        <a class="btn btn-primary col-2" href="{% url 'filter' %}" role="button">Filter Employees</a>
+        <a class="btn btn-primary col-2" href="{% url 'logout' %}" role="button">Logout</a>
+      </div>
+    </div>
+
+{% endblock content %}

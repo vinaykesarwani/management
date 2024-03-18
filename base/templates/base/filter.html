@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<form method="POST">
+    {% csrf_token %}
+    <label for="1">First name : </label>
+    <input type="text", id="1", name="first_name">
+    <label for="2">Last name : </label>
+    <input type="text", id="2", name="last_name">
+
+    <label for="department_name">Department</label>
+    <select name="department_name" id="department_name">
+        <option value="None">--None--</option>
+        {% for department in departments%}
+        <option value="{{department.department_name}}">{{department.department_name}}</option>
+        <br>
+        {% endfor %}
+    </select>
+      
+    <label for="Role">Role</label>
+    <select name="role" id="Role">
+        <option value="None">--None--</option>
+        {% for role in roles %}
+        <option value={{role.role}}>{{role.role}}</option>
+        <br>
+        {% endfor %}
+    </select>
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock content %}

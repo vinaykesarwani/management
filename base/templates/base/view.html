@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <h1 style="display: flex; justify-content: center; margin-top: 10px; margin-bottom: 30px;">Employee</h1>
+
+    {% for employee in employees %}
+    <div class="row">
+        <div class="col-md-6">
+            <img src="/{{employee.image}}" alt="employee_image" style="height: 200px; margin-left: 250px;">
+        </div>
+        <div class="col-md-6">
+            <p>Name: {{employee.first_name}} {{employee.last_name}}</p>
+            <p>Department: {{employee.department_name}}</p>
+            <p>Role: {{employee.role}}</p>
+            <p>Salary: {{employee.salary}}</p>
+            <p>Hired on: {{employee.hired_at}}</p>
+            <p>Work experience: {{employee.content}}</p>
+            <p><a href="{% url 'modify' employee.id %}"> Modify </a></p>
+            <p><a href="{% url 'logout' %}"> Logout </a></p>
+
+        </div>
+    </div>
+    <hr>
+    
+    {% endfor %}
+
+{% endblock content %}
